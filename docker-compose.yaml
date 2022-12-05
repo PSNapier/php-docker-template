@@ -5,10 +5,12 @@ services:
     build:
       dockerfile: Dockerfile
       context: .
+    restart: always
     volumes:
       - ./src:/var/www
   web:
     image: nginx
+    restart: always
     links:
       - php
     ports:
